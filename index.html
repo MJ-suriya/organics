@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organics</title>
+    <meta name="description" content="Organics – 30+ years of expertise in activated carbon, now pioneering organic farming solutions. Sustainable, trusted, and eco-friendly products for agriculture." />
+    <meta name="keywords" content="Organics, Activated Carbon, Organic Farming, Bio Compost, Vermi Compost, Fish Amino Acid, Sustainable Agriculture, India" />
+    <meta name="author" content="Organics" />
+    <link rel="icon" href="organics.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Poppins', sans-serif; }
+      html { scroll-behavior: smooth; }
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+      }
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 1.2s ease both;
+      }
+      .animate-delay-200 { animation-delay: 0.2s; }
+      .animate-delay-400 { animation-delay: 0.4s; }
+      .animate-delay-600 { animation-delay: 0.6s; }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-18px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3.5s ease-in-out infinite;
+      }
+      @keyframes parallax1 {
+        0% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-30px) scale(1.08); }
+        100% { transform: translateY(0) scale(1); }
+      }
+      @keyframes parallax2 {
+        0% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(30px) scale(1.12); }
+        100% { transform: translateY(0) scale(1); }
+      }
+      @keyframes parallax3 {
+        0% { transform: translateX(0) scale(1); }
+        50% { transform: translateX(40px) scale(1.05); }
+        100% { transform: translateX(0) scale(1); }
+      }
+      .parallax-blob-1 { animation: parallax1 12s ease-in-out infinite; filter: drop-shadow(0 8px 32px #14532d44); }
+      .parallax-blob-2 { animation: parallax2 16s ease-in-out infinite; filter: drop-shadow(0 8px 32px #bbf7d044); }
+      .parallax-blob-3 { animation: parallax3 20s ease-in-out infinite; filter: drop-shadow(0 8px 32px #fef9c344); }
+      .glass-card {
+        background: rgba(255,255,255,0.18);
+        box-shadow: 0 8px 32px 0 rgba(16, 42, 20, 0.18);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 2rem;
+        border: 1.5px solid rgba(255,255,255,0.25);
+      }
+      .btn-ripple {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-ripple:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(34,197,94,0.2);
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+        transition: width 0.4s ease, height 0.4s ease;
+        z-index: 0;
+      }
+      .btn-ripple:active:after {
+        width: 200px;
+        height: 200px;
+        transition: 0s;
+      }
+      /* --- Metamask-style Animations for Contact Us --- */
+      @keyframes blobMove1 {
+        0% { transform: translate(0,0) scale(1); }
+        50% { transform: translate(-30px, 20px) scale(1.08); }
+        100% { transform: translate(0,0) scale(1); }
+      }
+      @keyframes blobMove2 {
+        0% { transform: translate(0,0) scale(1); }
+        50% { transform: translate(40px, -20px) scale(1.12); }
+        100% { transform: translate(0,0) scale(1); }
+      }
+      .blob-1 { animation: blobMove1 12s ease-in-out infinite; }
+      .blob-2 { animation: blobMove2 14s ease-in-out infinite; }
+      @keyframes cardPopIn {
+        0% { opacity: 0; transform: scale(0.85) translateY(40px); }
+        60% { opacity: 1; transform: scale(1.05) translateY(-8px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      .animate-cardPopIn { animation: cardPopIn 1.1s cubic-bezier(.68,-0.55,.27,1.55) both; }
+      .card-hover-animate:hover { box-shadow: 0 8px 32px 0 rgba(34,197,94,0.18), 0 1.5px 8px 0 rgba(34,197,94,0.10); transform: translateY(-6px) scale(1.025); transition: all 0.3s cubic-bezier(.68,-0.55,.27,1.55); }
+      @keyframes inputBounce {
+        0% { box-shadow: 0 0 0 0 #22c55e33; }
+        50% { box-shadow: 0 0 0 6px #22c55e33; }
+        100% { box-shadow: 0 0 0 0 #22c55e33; }
+      }
+      .input-animated:focus { animation: inputBounce 0.5s; }
+      .input-underline {
+        position: relative;
+      }
+      .input-underline:after {
+        content: '';
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #22c55e 0%, #bbf7d0 100%);
+        width: 0;
+        transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+      .input-animated:focus + label + .input-underline:after,
+      .input-animated:not(:placeholder-shown) + label + .input-underline:after {
+        width: 100%;
+      }
+      .btn-pulse {
+        animation: pulseBtn 1.5s infinite;
+      }
+      @keyframes pulseBtn {
+        0% { box-shadow: 0 0 0 0 #22c55e55; }
+        70% { box-shadow: 0 0 0 10px #22c55e00; }
+        100% { box-shadow: 0 0 0 0 #22c55e00; }
+      }
+    </style>
+  </head>
+  <body class="bg-beige-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm animate-fadeIn">
+      <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+        <a href="#home" class="flex items-center gap-2 font-bold text-green-900 text-xl">
+          <img src="organics.jpg" alt="Organics Logo" class="h-14 w-auto object-contain drop-shadow-lg bg-white p-1" style="max-width:160px;"/>
+          Organics
+        </a>
+        <div class="hidden md:flex gap-8 text-base font-medium">
+          <a href="#home" class="hover:text-green-700 transition">Home</a>
+          <a href="#products" class="hover:text-green-700 transition">Products</a>
+          <a href="#about" class="hover:text-green-700 transition">About</a>
+          <a href="#mission" class="hover:text-green-700 transition">Mission</a>
+          <a href="#contact" class="hover:text-green-700 transition">Contact</a>
+        </div>
+        <a href="#distributor" class="hidden md:inline bg-green-800 text-white px-5 py-2 rounded-full font-semibold hover:bg-green-900 transition">Become a Distributor</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-white text-gray-900 py-10 md:py-24 px-3 md:px-6 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Farm background" class="w-full h-full object-cover object-center min-h-[220px] md:min-h-[400px] max-h-[400px] md:max-h-[600px] opacity-35"/>
+        <div class="absolute inset-0 bg-gradient-to-br from-green-200/70 via-yellow-100/60 to-white/80"></div>
+      </div>
+      <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center text-center py-8 md:py-16">
+        <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+          From <span class="text-green-700">Carbon Tech</span> to <span class="text-green-700">Organic Farming</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl">
+          30+ years of sustainability and trust in agriculture innovation. Now pioneering a green revolution for a healthier planet and better yields.
+        </p>
+        <div class="flex flex-col md:flex-row gap-3 md:gap-4 mb-2 md:mb-4 w-full md:w-auto px-2 md:px-0 justify-center">
+          <a href="#products" class="bg-green-700 text-white px-6 md:px-7 py-3 rounded-full font-semibold hover:bg-green-800 transition-transform transform hover:scale-105 shadow btn-ripple w-full md:w-auto">Explore Products</a>
+          <a href="#distributor" class="bg-yellow-400 text-green-900 px-6 md:px-7 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-transform transform hover:scale-105 shadow btn-ripple w-full md:w-auto">Become a Distributor</a>
+          <a href="#contact" class="bg-white text-green-900 border border-green-700 px-6 md:px-7 py-3 rounded-full font-semibold hover:bg-gray-100 transition-transform transform hover:scale-105 shadow btn-ripple w-full md:w-auto">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="relative py-20 px-6 bg-beige-100 overflow-hidden" id="about">
+      <!-- Soft SVG Accent -->
+      <svg class="absolute -top-20 -left-20 w-56 h-56 md:w-[500px] md:h-[400px] opacity-20" viewBox="0 0 500 400" fill="none" style="z-index:0;"><ellipse cx="250" cy="200" rx="220" ry="140" fill="#bbf7d0"/></svg>
+      <svg class="absolute -bottom-24 -right-24 w-56 h-56 md:w-[500px] md:h-[400px] opacity-10" viewBox="0 0 500 400" fill="none" style="z-index:0;"><ellipse cx="250" cy="200" rx="200" ry="120" fill="#fef9c3"/></svg>
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+        <!-- Image -->
+        <div class="flex-1 flex justify-center mb-8 md:mb-0">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Our Team in Nature" class="rounded-3xl shadow-2xl border-4 border-[#bbf7d0] w-full max-w-sm object-cover"/>
+        </div>
+        <!-- Text Card -->
+        <div class="flex-1">
+          <div class="glass-card p-8 rounded-3xl shadow-xl">
+            <h2 class="text-4xl font-bold mb-4 text-green-900">About <span class="text-[#22c55e]">Organics</span></h2>
+            <p class="text-lg mb-4">
+              <span class="font-semibold text-green-800">Organics</span> has been a pioneer in activated carbon manufacturing for over three decades. Our journey began with a commitment to quality and innovation in carbon technology, serving industries across India and beyond.
+            </p>
+            <ul class="list-none space-y-3 mb-4">
+              <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span> <span>Transitioning to <span class="font-semibold text-green-700">organic farming solutions</span> for a greener future.</span></li>
+              <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span> <span>Producing <span class="font-semibold text-yellow-700">eco-friendly products</span> that nurture soil health and empower farmers.</span></li>
+              <li class="flex items-start gap-2"><span class="text-green-500 mt-1">&#10003;</span> <span>Driven by <span class="font-semibold text-green-700">sustainability, trust,</span> and respect for nature.</span></li>
+            </ul>
+            <div class="mt-6">
+              <a href="#contact" class="bg-green-700 text-white px-7 py-3 rounded-full font-semibold hover:bg-green-800 transition-transform transform hover:scale-105 shadow btn-ripple">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="mission" class="relative py-16 px-6 bg-white text-center overflow-hidden">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-center relative z-10">
+        <div class="bg-green-50 rounded-xl p-8 shadow">
+          <h2 class="text-2xl font-bold mb-4 text-green-900">Our Mission</h2>
+          <p class="text-lg">
+            "To cultivate a sustainable future by enriching soil, empowering farmers, and protecting the planet."
+          </p>
+        </div>
+        <div class="bg-yellow-50 rounded-xl p-8 shadow">
+          <h2 class="text-2xl font-bold mb-4 text-yellow-800">Our Vision</h2>
+          <p class="text-lg">
+            "To globally transform agriculture through regenerative organic farming practices."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="relative py-16 px-6 bg-beige-50 overflow-hidden">
+      <div class="max-w-6xl mx-auto text-center relative z-10">
+        <h2 class="text-3xl font-bold mb-10 text-green-900">Our Organic Products</h2>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Product 1 -->
+          <a href="product-bio-compost.html" class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition-transform transform hover:-translate-y-2 hover:scale-105 flex flex-col items-center animate-fadeInUp">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=200&q=80" alt="Bio Compost" class="mb-4 h-24 w-24 rounded-xl object-cover shadow-lg animate-float"/>
+            <h3 class="text-xl font-semibold mb-2">Bio Compost</h3>
+            <p class="mb-2 text-gray-700">
+              Improves soil texture, root growth, and moisture retention. Ideal for enhancing soil structure naturally.
+            </p>
+          </a>
+          <!-- Product 2 -->
+          <a href="vermicompost.html" class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition-transform transform hover:-translate-y-2 hover:scale-105 flex flex-col items-center animate-fadeInUp animate-delay-200">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=200&q=80" alt="Vermi Compost" class="mb-4 h-24 w-24 rounded-xl object-cover shadow-lg animate-float"/>
+            <h3 class="text-xl font-semibold mb-2">Vermi Compost</h3>
+            <p class="mb-2 text-gray-700">
+              Enhances microbial activity and crop yield. Boosts soil aeration and organic content.
+            </p>
+          </a>
+          <!-- Product 3 -->
+          <a href="aminoacid.html" class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition-transform transform hover:-translate-y-2 hover:scale-105 flex flex-col items-center animate-fadeInUp animate-delay-400">
+            <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=200&q=80" alt="Fish Amino Acid" class="mb-4 h-24 w-24 rounded-xl object-cover shadow-lg animate-float"/>
+            <h3 class="text-xl font-semibold mb-2">Fish Amino Acid</h3>
+            <p class="mb-2 text-gray-700">
+              A nitrogen-rich, natural growth promoter for foliar spray or soil drench. Promotes strong plant growth.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="relative py-16 px-6 bg-white overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <h2 class="text-3xl font-bold mb-8 text-green-900">What Farmers Say</h2>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=crop&w=800&q=80" alt="Farmers" class="absolute left-0 top-0 w-full h-full object-cover opacity-10 rounded-2xl" style="z-index:0;"/>
+          <div class="relative grid md:grid-cols-3 gap-6 z-10">
+            <div class="bg-green-50 rounded-xl p-6 shadow flex flex-col items-center animate-fadeInUp">
+              <svg class="h-8 w-8 text-green-700 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2-2h6a2 2 0 012 2v12a2 2 0 01-2 2z"/></svg>
+              <blockquote class="italic mb-2">"Organics' compost improved my soil and doubled my yield!"</blockquote>
+              <span class="font-semibold text-green-900">– Ramesh, Tamil Nadu</span>
+            </div>
+            <div class="bg-yellow-50 rounded-xl p-6 shadow flex flex-col items-center animate-fadeInUp animate-delay-200">
+              <svg class="h-8 w-8 text-yellow-700 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2-2h6a2 2 0 012 2v12a2 2 0 01-2 2z"/></svg>
+              <blockquote class="italic mb-2">"Trustworthy products and great support for organic farming."</blockquote>
+              <span class="font-semibold text-yellow-800">– Priya, Kerala</span>
+            </div>
+            <div class="bg-green-50 rounded-xl p-6 shadow flex flex-col items-center animate-fadeInUp animate-delay-400">
+              <svg class="h-8 w-8 text-green-700 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V7a2 2 0 012-2h4l2-2h6a2 2 0 012 2v12a2 2 0 01-2 2z"/></svg>
+              <blockquote class="italic mb-2">"Organic solutions that really work for my farm!"</blockquote>
+              <span class="font-semibold text-green-900">– Suresh, Karnataka</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 text-gray-500 text-sm">(Testimonial slider coming soon)</div>
+      </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="relative py-20 px-6 bg-beige-100 overflow-hidden">
+      <!-- Animated SVG Blobs -->
+      <svg class="absolute -top-24 -left-24 w-96 h-96 opacity-30 blob-1" viewBox="0 0 400 400" fill="none" style="z-index:0;"><ellipse cx="200" cy="200" rx="180" ry="120" fill="#bbf7d0"/></svg>
+      <svg class="absolute -bottom-32 -right-32 w-96 h-96 opacity-20 blob-2" viewBox="0 0 400 400" fill="none" style="z-index:0;"><ellipse cx="200" cy="200" rx="160" ry="100" fill="#fef9c3"/></svg>
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-10 text-green-900 text-center animate-fadeInUp">Contact Us</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <!-- Left: Info & Map -->
+          <div class="flex flex-col gap-6 animate-cardPopIn animate-delay-200">
+            <div class="bg-white border-l-4 border-green-600 rounded-2xl shadow-lg p-8 flex flex-col gap-4 card-hover-animate transition-all">
+              <div class="flex items-center gap-3 mb-2">
+                <svg class="h-6 w-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span class="font-semibold text-gray-700">123 Industrial Area, Tamil Nadu, India</span>
+              </div>
+              <div class="flex items-center gap-3 mb-2">
+                <svg class="h-6 w-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span class="font-semibold text-gray-700">contact@organics.com</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="h-6 w-6 text-green-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a2 2 0 011.7.95l1.54 2.6a2 2 0 001.7.95H19a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"/></svg>
+                <span class="font-semibold text-gray-700">+91 98765 43210</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 animate-cardPopIn animate-delay-400 card-hover-animate transition-all">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Map" class="w-full h-48 object-cover"/>
+              <div class="p-3 text-xs text-gray-500 text-center">Factory location (map for illustration only)</div>
+            </div>
+          </div>
+          <!-- Right: Modern Form -->
+          <form class="bg-white border-l-4 border-green-600 rounded-2xl shadow-lg p-8 flex flex-col gap-6 animate-cardPopIn animate-delay-600 card-hover-animate transition-all">
+            <div class="relative">
+              <input id="name" name="name" type="text" required class="peer border-b-2 border-gray-300 focus:border-green-600 outline-none w-full py-3 px-2 bg-transparent transition placeholder-transparent input-animated" placeholder=" " />
+              <label for="name" class="absolute left-2 top-3 text-gray-500 text-base transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-green-700 bg-white px-1">Name</label>
+              <span class="input-underline"></span>
+            </div>
+            <div class="relative">
+              <input id="email" name="email" type="email" required class="peer border-b-2 border-gray-300 focus:border-green-600 outline-none w-full py-3 px-2 bg-transparent transition placeholder-transparent input-animated" placeholder=" " />
+              <label for="email" class="absolute left-2 top-3 text-gray-500 text-base transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-green-700 bg-white px-1">Email</label>
+              <span class="input-underline"></span>
+            </div>
+            <div class="relative">
+              <textarea id="message" name="message" rows="4" required class="peer border-b-2 border-gray-300 focus:border-green-600 outline-none w-full py-3 px-2 bg-transparent transition placeholder-transparent resize-none input-animated" placeholder=" "></textarea>
+              <label for="message" class="absolute left-2 top-3 text-gray-500 text-base transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-green-700 bg-white px-1">Message</label>
+              <span class="input-underline"></span>
+            </div>
+            <button type="submit" class="mt-2 bg-green-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-800 transition-transform transform hover:scale-105 shadow btn-ripple btn-pulse text-lg">Send Message</button>
+            <div class="hidden" id="form-success">Thank you for contacting us! We'll get back to you soon.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distributor CTA -->
+    <section id="distributor" class="py-16 px-6 bg-green-900 text-white text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Become a Distributor</h2>
+        <p class="text-lg mb-6">Join us in our mission to promote sustainable agriculture. Partner with Organics and grow with us!</p>
+        <a href="#contact" class="bg-yellow-400 text-green-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">Contact for Partnership</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-gray-900 text-white py-10 px-6 overflow-hidden">
+      <svg class="absolute -bottom-8 -right-8 w-32 h-16 opacity-20" viewBox="0 0 80 40" fill="none" style="z-index:0;"><path d="M10 30C30 10 70 10 70 30Q40 40 10 30Z" fill="#bbf7d0"/></svg>
+      <svg class="absolute top-0 left-0 w-24 h-10 opacity-10" viewBox="0 0 60 20" fill="none" style="z-index:0;"><path d="M5 15C15 5 55 5 55 15Q30 20 5 15Z" fill="#a3e635"/></svg>
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left relative z-10">
+        <div>
+          <h4 class="font-semibold text-lg">Organics</h4>
+          <p>© 2025 All rights reserved.</p>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 items-center">
+          <nav class="flex gap-4 mb-2 md:mb-0">
+            <a href="#home" class="hover:text-yellow-400">Home</a>
+            <a href="#products" class="hover:text-yellow-400">Products</a>
+            <a href="#about" class="hover:text-yellow-400">About</a>
+            <a href="#contact" class="hover:text-yellow-400">Contact</a>
+          </nav>
+          <div class="flex gap-4">
+            <a href="#" aria-label="Facebook" class="hover:text-yellow-400"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg></a>
+            <a href="#" aria-label="Instagram" class="hover:text-yellow-400"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="hover:text-yellow-400"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.845-1.563 3.043 0 3.604 2.004 3.604 4.609v5.587z"/></svg></a>
+          </div>
+        </div>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <span title="ISO Certified" class="inline-flex items-center justify-center h-8 w-8 bg-white rounded-full shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" class="h-6 w-6">
+              <circle cx="16" cy="16" r="15" stroke="#4CAF50" stroke-width="2" fill="#fff"/>
+              <path d="M10 17l4 4 8-8" stroke="#4CAF50" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="16" y="13.5" text-anchor="middle" font-size="6" fill="#4CAF50" font-family="Poppins, Arial, sans-serif">ISO</text>
+            </svg>
+          </span>
+          <img src="https://img.icons8.com/ios-filled/32/FFD700/medal2.png" alt="Trusted Supplier" title="Trusted Supplier" class="h-8 w-8"/>
+          <img src="https://img.icons8.com/ios-filled/32/8B5E3C/leaf.png" alt="Eco Friendly" title="Eco Friendly" class="h-8 w-8"/>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
